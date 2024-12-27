@@ -62,6 +62,9 @@ defaults write com.apple.dock mru-spaces -bool false
 defaults write com.apple.dock wvous-br-corner -int 13
 defaults write com.apple.dock wvous-br-modifier -int 0
 
+# Group windows by application (better for Aerospace)
+defaults write com.apple.dock expose-group-apps -bool true
+
 killall Dock >/dev/null 2>&1
 
 # Prevent Photos from opening automatically when devices are plugged in
