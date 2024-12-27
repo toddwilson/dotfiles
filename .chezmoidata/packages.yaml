@@ -9,3 +9,4 @@ packages:
       - 'raycast'
       - 'ghostty'
       - 'font-jetbrains-mono-nerd-font'
+      - 'tailscale'
