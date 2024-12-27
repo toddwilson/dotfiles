@@ -4,6 +4,7 @@ packages:
       - 'nikitabobko/tap'
     brews:
       - 'bat'
+      - 'neovim'
     casks:
       - 'aerospace'
       - 'raycast'

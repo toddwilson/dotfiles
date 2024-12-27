@@ -28,6 +28,19 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 # Don't ask for password immediately in case I enable the screen saver by accident
 defaults write com.apple.screensaver askForPasswordDelay -int 5
 
+## Dock
+# Set dock position
+defaults write com.apple.dock orientation -string "left"
+
+# Set the icon size of Dock items in pixels
+defaults write com.apple.dock "tilesize" -int 25 
+
+# Set dock to auto-hide
+defaults write com.apple.dock "autohide" -bool true
+
+# Disable launch animation
+defaults write com.apple.dock "launchanim" -bool false
+
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
 
@@ -48,6 +61,8 @@ defaults write com.apple.dock mru-spaces -bool false
 # Bottom left screen corner → Lock screen
 defaults write com.apple.dock wvous-br-corner -int 13
 defaults write com.apple.dock wvous-br-modifier -int 0
+
+killall Dock >/dev/null 2>&1
 
 # Prevent Photos from opening automatically when devices are plugged in
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true && killall Photos >/dev/null 2>&1 
@@ -91,5 +106,13 @@ killall Finder >/dev/null 2>&1
 killall Mail >/dev/null 2>&1
 # Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
 defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
+
+
+## Misc
+
+# Make chezmoi use Git with SSH
+cd "{{ .chezmoi.sourceDir }}"
+CHEZMOI_SSH_URL=$(git remote get-url origin | sed -Ene's#https://([^/]*)/([^/]*/.*.git)#git@\1:\2#p')
+[[ -z $CHEZMOI_SSH_URL ]] || git remote set-url origin $CHEZMOI_SSH_URL
 
 {{ end -}}
