@@ -1,4 +1,11 @@
 packages:
   darwin:
+    taps:
+      - 'nikitabobko/tap'
+    brews:
+      - 'bat'
     casks:
+      - 'aerospace'
+      - 'raycast'
       - 'ghostty'
+      - 'font-jetbrains-mono-nerd-font'
