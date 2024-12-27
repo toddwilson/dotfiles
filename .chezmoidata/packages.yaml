@@ -1,13 +1,17 @@
 packages:
   darwin:
     taps:
-      - 'nikitabobko/tap'
+      - "nikitabobko/tap"
     brews:
-      - 'bat'
-      - 'neovim'
+      - "bat"
+      - "neovim"
+      - "go"
+      - "npm"
+      - "wget"
     casks:
-      - 'aerospace'
-      - 'raycast'
-      - 'ghostty'
-      - 'font-jetbrains-mono-nerd-font'
-      - 'tailscale'
+      - "aerospace"
+      - "raycast"
+      - "ghostty"
+      - "font-jetbrains-mono-nerd-font"
+      - "tailscale"
+      - "slack"
