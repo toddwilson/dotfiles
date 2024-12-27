@@ -1,0 +1,15 @@
+
+-- Turn this into a handy function to show recently modified files
+--
+-- function _G.git_diff(opts)
+--   local pickers = require "telescope.pickers"
+--   local finders = require "telescope.finders"
+--   local conf = require("telescope.config").values
+--   list = vim.fn.systemlist('git diff --name-only main')
+--
+--   pickers.new(opts, {
+--     prompt_title = "git diff",
+--     finder = finders.new_table { results = list },
+--     sorter = conf.generic_sorter(opts)
+--   }):find()
+-- end
