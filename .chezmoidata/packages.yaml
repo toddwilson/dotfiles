@@ -12,6 +12,7 @@ packages:
       - "fvm"
       - "fzf"
       - "git"
+      - "glow"
       - "go"
       - "mas"
       - "mosh"

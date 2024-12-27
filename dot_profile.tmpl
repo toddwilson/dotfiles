@@ -1,0 +1,6 @@
+# .profile: (Bash) Login shell configuration, runs once per login session.
+
+# MacOS 
+{{ if eq .chezmoi.os "darwin" }}
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+{{ end }}

@@ -1,6 +1,6 @@
-# zprofile: Login shell configuration, runs once per login session.
+# .zprofile: (Zsh) Login shell configuration, runs once per login session.
 
-# MacOS 
-{{ if eq .chezmoi.os "darwin" }}
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-{{ end }}
+# Use .profile when possible for cross-compatibility with bash
+if [ -f "$HOME/.profile" ]; then
+  source "$HOME/.profile"
+fi
