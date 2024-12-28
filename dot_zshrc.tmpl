@@ -5,7 +5,7 @@ if [ -f "$HOME/.bashrc" ]; then
 fi
 
 alias s="sesh connect \$(sesh list | fzf)"
-alias cat="bat"
+# alias cat="bat"
 
 if _have eza; then 
   alias ls="eza"
@@ -27,3 +27,6 @@ fi
 if _have starship; then
   eval "$(starship init zsh)"
 fi
+
+# Added by dart cli
+[[ -f $HOME/.dart-cli-completion/zsh-config.zsh ]] && . $HOME/.dart-cli-completion/zsh-config.zsh || true

@@ -65,6 +65,13 @@ defaults write com.apple.dock wvous-br-modifier -int 0
 # Group windows by application (better for Aerospace)
 defaults write com.apple.dock expose-group-apps -bool true
 
+# I hate the genie effect 
+defaults write com.apple.dock "mineffect" -string "scale"
+
+# Only show active apps in the dock
+# I don't use the dock much, but this could be troublesome for some
+defaults write com.apple.dock "static-only" -bool "true"
+
 killall Dock >/dev/null 2>&1
 
 # Prevent Photos from opening automatically when devices are plugged in
