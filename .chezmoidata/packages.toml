@@ -10,6 +10,7 @@ brews = [
   "bat",
   "clang-format",
   "cmake",
+  "cocoapods",
   "exiftool",
   "eza",
   "fvm",
