@@ -3,8 +3,10 @@ packages:
     taps:
       - "nikitabobko/tap"
       - "leoafarias/fvm"
+      - "charmbracelet/tap"
     brews:
       - "bat"
+      - "mods"
       - "clang-format"
       - "cmake"
       - "exiftool"

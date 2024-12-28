@@ -10,6 +10,7 @@ alias cat="bat"
 if _have eza; then 
   alias ls="eza"
   alias ll="eza -la"
+  alias tree='eza --tree "$@"'
 fi
 
 if _have fzf; then
