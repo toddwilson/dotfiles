@@ -8,18 +8,23 @@ case $- in
 esac
 
 
-# -- local utility functions ---------------------
+# -- local utility functions --------------------
 
 _have() { type "$1" &>/dev/null; }
 _source_if() { [[ -r "$1" ]] && source "$1"; }
 
 
-# -- environment variables -----------------------
+# -- environment variables ----------------------
 
 export LANG=en_US.UTF-8
 export USER="${USER:-$(whoami)}"
 export TZ=America/New_York
 
+
+# -- shhh, secrets ------------------------------
+
+export OPENAI_API_KEY="{{ .secrets.keys.openai }}"
+export ANTHROPIC_API_KEY="{{ .secrets.keys.anthropic }}"
 
 # -- path ---------------------------------------
 
