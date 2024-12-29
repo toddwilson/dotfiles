@@ -9,4 +9,7 @@ if ! command -v rustup &> /dev/null; then
   rustup update
 fi
 
+# Install Rosetta
+sudo softwareupdate --install-rosetta --agree-to-license
+
 {{ end -}}
