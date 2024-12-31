@@ -50,4 +50,5 @@ casks = [
   "raycast",
   "slack",
   "tailscale",
+  "vscodium",
 ]
