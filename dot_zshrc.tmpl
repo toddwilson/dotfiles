@@ -1,37 +1,42 @@
-
 # Use .bashrc when possible for cross-compatibility with bash
 if [ -f "$HOME/.bashrc" ]; then
   source "$HOME/.bashrc"
 fi
 
-alias s="sesh connect \$(sesh list | fzf)"
-# alias cat="bat"
+{{ if eq .chezmoi.os "darwin" }}
 
-alias code=codium
 
-if _have eza; then 
-  alias ls="eza"
-  alias ll="eza -la"
-  alias tree='eza --tree "$@"'
-fi
+  alias s="sesh connect \$(sesh list | fzf)"
+  # alias cat="bat"
 
-if _have fzf; then
-  # Set up fzf key bindings and fuzzy completion
-  source <(fzf --zsh)
-fi
+  alias code=codium
+  alias icloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
 
-if _have zoxide; then 
-  # Zoxide (better cd)
-  eval "$(zoxide init zsh)"
-fi
+  if _have eza; then 
+    alias ls="eza"
+    alias ll="eza -la"
+    alias tree='eza --tree "$@"'
+  fi
 
-# Starship
-if _have starship; then
-  eval "$(starship init zsh)"
-fi
+  if _have fzf; then
+    # Set up fzf key bindings and fuzzy completion
+    source <(fzf --zsh)
+  fi
 
-# Added by dart cli
-[[ -f $HOME/.dart-cli-completion/zsh-config.zsh ]] && . $HOME/.dart-cli-completion/zsh-config.zsh || true
+  if _have zoxide; then 
+    # Zoxide (better cd)
+    eval "$(zoxide init zsh)"
+  fi
 
-# Use Arc as our Chromium option (for now)
-export CHROME_EXECUTABLE=/Applications/Arc.app/Contents/MacOS/Arc
+  # Starship
+  if _have starship; then
+    eval "$(starship init zsh)"
+  fi
+
+  # Added by dart cli
+  [[ -f $HOME/.dart-cli-completion/zsh-config.zsh ]] && . $HOME/.dart-cli-completion/zsh-config.zsh || true
+
+  # Use Arc as our Chromium option (for now)
+  export CHROME_EXECUTABLE=/Applications/Arc.app/Contents/MacOS/Arc
+
+{{ end }}
