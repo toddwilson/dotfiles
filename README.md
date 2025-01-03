@@ -1,6 +1,6 @@
 # Dotfiles
 
-<img src="assets/dotfiles.png" alt="Let's get to work" width="200" height="100">
+<img src="assets/dotfiles.png" alt="Let's get to work" width="400" height="400">
 
 ## Setup New Host
 
