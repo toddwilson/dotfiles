@@ -12,6 +12,7 @@ brews = [
   "cmake",
   "cocoapods",
   "docker",
+  "docker-compose",
   "exiftool",
   "eza",
   "fvm",
