@@ -1,0 +1,61 @@
+set termguicolors
+
+" Get path of vimrc
+let config_dir = fnamemodify(expand('<sfile>:p'), ':h')
+
+" Only load plugins if Vim-Plug is available
+if filereadable(expand(config_dir . "/autoload/plug.vim"))
+  call plug#begin()
+
+  Plug 'tpope/vim-sensible'
+  Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+
+  call plug#end()
+endif
+
+
+if (!empty(glob(config_dir . '/plugged/catppuccin')))
+	colorscheme catppuccin_mocha
+endif
+
+
+set number  " show line number on current line
+set relativenumber  " show relative line numbers
+set autoindent  " auto-indent new lines
+set expandtab " replace tabs with spaces
+set tabstop=2 " number of spaces to replace a tab with when expandtab
+set softtabstop=2
+set shiftwidth=2
+set smartindent
+set smarttab
+set noignorecase  " ignore case when searching
+
+" disable bell 
+set noerrorbells
+set visualbell
+set vb t_vb=
+
+" mark trailing spaces as errors (break Makefiles, etc.)
+match Visual '\s\+$'
+
+" more risky, but cleaner
+set nobackup
+set noswapfile
+set nowritebackup
+
+set textwidth=80
+"set colorcolumn=80
+
+set wrapscan " wrap around when searching
+
+set wildmenu " better command-line completion
+
+" enable omni-completion
+set omnifunc=syntaxcomplete#Complete
+imap <tab><tab> <c-x><c-o>
+
+" set TMUX window name to name of file
+"if exists('$TMUX')
+"  autocmd BufEnter * call system('tmux rename-window ' . expand('%:p:h:t') .
+"  '/' . expand('%:t'))
+"endif

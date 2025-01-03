@@ -33,6 +33,7 @@ brews = [
   "ruby",
   "sqlc",
   "starship",
+  "telnet",
   "tmux",
   "vim",
   "wget",
