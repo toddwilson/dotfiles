@@ -21,11 +21,6 @@ export USER="${USER:-$(whoami)}"
 export TZ=America/New_York
 
 
-# -- shhh, secrets ------------------------------
-
-export OPENAI_API_KEY="{{ .secrets.keys.openai }}"
-export ANTHROPIC_API_KEY="{{ .secrets.keys.anthropic }}"
-
 # -- path ---------------------------------------
 
 pathappend() {

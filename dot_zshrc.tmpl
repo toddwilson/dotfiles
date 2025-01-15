@@ -5,6 +5,9 @@ fi
 
 {{ if eq .chezmoi.os "darwin" }}
 
+  # Currently only want these on MacOS
+  export OPENAI_API_KEY="{{ .secrets.keys.openai }}"
+  export ANTHROPIC_API_KEY="{{ .secrets.keys.anthropic }}"
 
   alias s="sesh connect \$(sesh list | fzf)"
   # alias cat="bat"
