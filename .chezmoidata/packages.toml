@@ -32,6 +32,7 @@ brews = [
   "npm",
   "ripgrep",
   "ruby",
+  "slides",
   "sqlc",
   "starship",
   "telnet",
