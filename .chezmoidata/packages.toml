@@ -56,3 +56,7 @@ casks = [
   "tailscale",
   "vscodium",
 ]
+
+[packages.linux]
+
+apt = ["git"]
