@@ -23,6 +23,7 @@ brews = [
   "go",
   "joshmedeski/sesh/sesh",
   "jq",
+  "lazygit",
   "mas",
   "mods",
   "mosh",
