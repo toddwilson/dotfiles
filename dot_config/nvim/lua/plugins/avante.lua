@@ -5,6 +5,8 @@ return {
   version = false, -- set this to "*" if you want to always pull the latest change, false to update on release
   opts = {
     -- add any opts here
+    ---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
+    provider = "openai", -- Recommend using Claude
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
   build = "make",

@@ -67,4 +67,9 @@ fi
   export NOTES_VAULT="$HOME/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/Todd\'s\ Vault"
   alias vault="cd $NOTES_VAULT"
 
+  # Lynx config
+  if [ -e "$HOME/.config/lynx/lynx.cfg" ];then
+    export LYNX_CFG_PATH="$HOME/.config/lynx/"
+  fi
+
 {{ end }}

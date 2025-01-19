@@ -41,12 +41,19 @@ author = "Todd Wilson"
 
 
 # GROUP OVERRIDES
-[group.journal]
-paths = ["journal/weekly", "journal/daily"]
+#[group.journal]
+#paths = ["journal/weekly", "journal/daily"]
 
-[group.journal.note]
-filename = "{{format-date now}}"
+#[group.journal.note]
+#filename = "{{format-date now}}"
 
+[group.daily]
+paths = ["dailies"]
+
+[group.daily.note]
+filename = "{{format-date now '%Y-%m-%d'}}"
+extension = "md"
+template = "daily.md"
 
 # MARKDOWN SETTINGS
 [format.markdown]
@@ -80,6 +87,9 @@ recents = "--sort created- --created-after 'last two weeks'"
 
 # new note
 n = 'zk new --no-input --title $argv'
+
+# new journal entry
+daily = 'zk new --no-input "$ZK_NOTEBOOK_DIR/dailies"'
 
 # Edit the last modified note.
 last = "zk edit --limit 1 --sort modified- $@"

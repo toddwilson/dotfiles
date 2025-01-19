@@ -73,8 +73,13 @@ if [ -n "$BASH_VERSION" ]; then
   shopt -s extglob # extended globbing patterns
   shopt -s histappend
 elif [ -n "$ZSH_VERSION" ]; then
-  setopt EXTENDED_GLOB
-  setopt APPEND_HISTORY
+  # Set the necessary options
+  setopt append_history       # Append rather than overwrite history file when exiting
+  setopt share_history        # Share history across all sessions
+  setopt inc_append_history   # Write to history file immediately, not just on exit
+  setopt hist_ignore_dups     # Don't record duplicate commands
+  setopt hist_reduce_blanks   # Remove superfluous blanks
+  setopt extended_glob        # extended globbing patterns
 fi
 
 set -o vi
