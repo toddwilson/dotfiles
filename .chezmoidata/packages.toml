@@ -7,7 +7,6 @@ taps = [
 ]
 
 brews = [
-  "aider",
   "bat",
   "clang-format",
   "cmake",
