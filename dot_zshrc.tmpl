@@ -8,6 +8,8 @@ fi
   # Currently only want these on MacOS
   export OPENAI_API_KEY="{{ .secrets.keys.openai }}"
   export ANTHROPIC_API_KEY="{{ .secrets.keys.anthropic }}"
+  export FIREWORKS_AI_API_KEY="{{ .secrets.keys.fireworks_ai }}"
+  export GEMINI_API_KEY="{{ .secrets.keys.gemini }}"
 
   alias s="sesh connect \$(sesh list | fzf)"
   # alias cat="bat"
@@ -60,6 +62,9 @@ fi
   # Added by dart cli
   [[ -f $HOME/.dart-cli-completion/zsh-config.zsh ]] && . $HOME/.dart-cli-completion/zsh-config.zsh || true
 
+  # Homebrew LLVM doesn't add all tools to the path, such as clang-tidy
+  export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+
   # Use Arc as our Chromium option (for now)
   export CHROME_EXECUTABLE=/Applications/Arc.app/Contents/MacOS/Arc
 
@@ -72,5 +77,9 @@ fi
   if [ -e "$HOME/.config/lynx/lynx.cfg" ];then
     export LYNX_CFG_PATH="$HOME/.config/lynx/"
   fi
+
+  # Added by LM Studio CLI (lms)
+  export PATH="$PATH:$HOME/.lmstudio/bin"
+
 
 {{ end }}
