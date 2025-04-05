@@ -33,6 +33,9 @@ fi
     eval "$(zoxide init zsh)"
   fi
 
+  # GOPATH and it's annoying default # TODO: config for bash/linux and consider moving to ~/.local
+  export GOPATH=$HOME/go
+
   # Bind sesh menu to option(alt)+s
   if _have sesh; then
     function sesh-sessions() {
