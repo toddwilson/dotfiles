@@ -6,6 +6,9 @@ return {
 
     -- I use alt-h for aerospace focus, so needed to overwrite hidden toggle here
     return {
+      winopts = {
+        split = "belowright new",
+      },
       files = {
         cwd_prompt = false,
         actions = {
