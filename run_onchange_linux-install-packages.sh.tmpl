@@ -1,4 +1,5 @@
 {{ if eq .chezmoi.os "linux" -}}
+#!/bin/sh
   {{ if eq .chezmoi.username "root" }}
     sudo_cmd = ""
   {{ else }}
